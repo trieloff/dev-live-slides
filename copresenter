@@ -22,14 +22,16 @@ simulate_typing() {
     local word
 
     # Read word by word and print with random delays
-    echo "$text" | while read -r line; do
-        for word in $line; do
-            echo -n "$word "
-            # Random delay between 0.01 and 0.04 seconds (much faster)
-            sleep "0.0$(( RANDOM % 4 + 1 ))"
+    {
+        echo "$text" | while read -r line; do
+            for word in $line; do
+                echo -n "$word "
+                # Random delay between 0.01 and 0.04 seconds (much faster)
+                sleep "0.0$(( RANDOM % 4 + 1 ))"
+            done
+            echo  # newline at end of line
         done
-        echo  # newline at end of line
-    done
+    } | bat --language markdown --style plain --paging never
 }
 
 # Function to extract slides content up to the exec block containing the prompt
@@ -261,8 +263,8 @@ main() {
     # Cache the output
     echo "$output" > "$cache_file"
 
-    # Return the output
-    echo "$output"
+    # Return the output with bat highlighting
+    echo "$output" | bat --language markdown --style plain --paging never
 }
 
 main "$@"
