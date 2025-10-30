@@ -389,8 +389,15 @@ COMPARE
 
 | Agent | Model |
 |-------|-------|
-| `claude` | Claude 4.5 Sonnet |
-| `copilot` | GPT-4 / Codex |
-| `cursor` | GPT-4 / Claude |
-| `aider` | GPT-4 / Claude |
-| `windsurf` | GPT-4 |
+| `claude` | claude-opus-4.1 |
+| `codex` | gpt-5-high |
+| `copilot` | claude-haiku-4.5 |
+| `droid` | Droid Core (GLM 4.6) |
+| `amp` | sonnet-4.5/gpt-5 |
+| `cursor-agent` | composer 1 |
+| `gemini` | gemini-2.5-pro |
+| `opencode` | Grok Code Fast 1 |
+| `qwen` | qwen3-coder-plus-2025-09-23 |
+| `kimi` | kimi-k2 |
+| `crush` | GLM-4.6 |
+| `goose` | gpt-oss-120b |
