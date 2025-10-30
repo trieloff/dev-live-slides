@@ -73,6 +73,64 @@ Agentic
 
 ---
 
+# AGENTS.md
+
+TODO: Add content about AGENTS.md
+
+---
+
+# SKILLS.md
+
+TODO: Add content about SKILLS.md
+
+---
+
+# --dangerously-skip-permissions
+
+```banner
+YOLO
+```
+
+TODO: Add content about YOLO mode
+
+---
+
+# Herzblut
+
+TODO: Add content about Herzblut
+
+---
+
+# Multitasking/Multi-Clauding
+
+TODO: Add content about running multiple Claude instances
+
+---
+
+# Git Worktrees
+
+TODO: Add content about Git worktrees
+
+---
+
+# Seeing like an Agent
+
+TODO: Add content about agent perspective
+
+---
+
+# Guardrails/Attribution/Transparency
+
+TODO: Add content about safety and transparency
+
+---
+
+# Agent/Model table
+
+TODO: Add comparison table
+
+---
+
 # Edge Delivery Services
 
 ```banner:slant
