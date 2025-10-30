@@ -31,7 +31,7 @@ simulate_typing() {
             done
             echo  # newline at end of line
         done
-    } | bat --language markdown --style plain --paging never
+    } | bat --force-colorization --paging=never --language=markdown --plain
 }
 
 # Function to extract slides content up to the exec block containing the prompt
@@ -264,7 +264,7 @@ main() {
     echo "$output" > "$cache_file"
 
     # Return the output with bat highlighting
-    echo "$output" | bat --language markdown --style plain --paging never
+    echo "$output" | bat --force-colorization --paging=never --language=markdown --plain
 }
 
 main "$@"
