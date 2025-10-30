@@ -1,0 +1,241 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Directory for storing cached outputs
+CACHE_DIR=".copresenter"
+SESSION_FILE="$CACHE_DIR/session"
+SLIDES_FILE="slides.md"
+COPRESENTER_MD="COPRESENTER.md"
+
+# Initialize cache directory
+mkdir -p "$CACHE_DIR"
+
+# Function to compute hash of prompt
+hash_prompt() {
+    echo -n "$1" | shasum -a 256 | cut -d' ' -f1
+}
+
+# Function to extract slides content up to the exec block containing the prompt
+extract_slides_context() {
+    local prompt="$1"
+    local in_exec_block=0
+    local result=""
+
+    while IFS= read -r line; do
+        result+="$line"$'\n'
+
+        # Check if we're entering an exec block
+        if [[ "$line" =~ ^\`\`\`bash.*\+exec ]]; then
+            in_exec_block=1
+            continue
+        fi
+
+        # If we're in an exec block, check if it contains our copresenter call
+        if [[ $in_exec_block -eq 1 ]]; then
+            if [[ "$line" =~ ^\`\`\` ]]; then
+                in_exec_block=0
+            elif [[ "$line" =~ \./copresenter ]]; then
+                # Found the copresenter call, return everything up to here
+                echo "$result"
+                return 0
+            fi
+        fi
+    done < "$SLIDES_FILE"
+
+    # If we didn't find a matching exec block, return all slides
+    echo "$result"
+}
+
+# Function to call Claude Code
+call_claude() {
+    local new_session="$1"
+    local prompt="$2"
+    local slides_context="$3"
+
+    # Build the full prompt
+    local full_prompt
+    full_prompt="$(cat "$COPRESENTER_MD")"$'\n\n'
+    full_prompt+="## Slides Context"$'\n\n'
+    full_prompt+="$slides_context"$'\n\n'
+    full_prompt+="## Presenter's Request"$'\n\n'
+    full_prompt+="$prompt"
+
+    local claude_args=()
+
+    if [[ "$new_session" == "true" ]]; then
+        # New session
+        claude_args+=("-c")
+    else
+        # Continue existing session if available
+        if [[ -f "$SESSION_FILE" ]]; then
+            local session_id
+            session_id=$(cat "$SESSION_FILE")
+            claude_args+=("-s" "$session_id")
+        else
+            # No session exists, create new one
+            claude_args+=("-c")
+        fi
+    fi
+
+    # Call claude and capture output and session ID
+    local output
+    output=$(claude "${claude_args[@]}" -p "$full_prompt" 2>&1)
+
+    # Extract session ID from output if it's a new session
+    # Claude Code outputs session info, we need to capture it
+    if [[ "$new_session" == "true" ]] || [[ ! -f "$SESSION_FILE" ]]; then
+        # Try to extract session ID from claude output
+        # This is a placeholder - actual implementation depends on claude CLI output format
+        # For now, we'll create a simple session marker
+        echo "session-$(date +%s)" > "$SESSION_FILE"
+    fi
+
+    echo "$output"
+}
+
+# Function to handle --prepare mode
+prepare_mode() {
+    echo "Preparing cached responses for all copresenter calls in slides..."
+
+    # Extract all copresenter calls from slides
+    local calls=()
+    local in_exec_block=0
+
+    while IFS= read -r line; do
+        if [[ "$line" =~ ^\`\`\`bash.*\+exec ]]; then
+            in_exec_block=1
+            continue
+        fi
+
+        if [[ $in_exec_block -eq 1 ]]; then
+            if [[ "$line" =~ ^\`\`\` ]]; then
+                in_exec_block=0
+            elif [[ "$line" =~ \./copresenter[[:space:]]+(.+) ]]; then
+                # Extract the prompt (everything after ./copresenter, excluding --new if present)
+                local call="${BASH_REMATCH[1]}"
+                # Remove --new flag if present
+                call="${call//--new /}"
+                call="${call//--new/}"
+                call=$(echo "$call" | xargs)  # trim whitespace
+
+                if [[ -n "$call" ]]; then
+                    calls+=("$call")
+                fi
+            fi
+        fi
+    done < "$SLIDES_FILE"
+
+    echo "Found ${#calls[@]} copresenter call(s)"
+
+    # Process each call
+    local count=0
+    for prompt in "${calls[@]}"; do
+        ((count++))
+        echo "[$count/${#calls[@]}] Processing: $prompt"
+
+        local hash
+        hash=$(hash_prompt "$prompt")
+        local cache_file="$CACHE_DIR/$hash"
+
+        if [[ -f "$cache_file" ]]; then
+            echo "  → Already cached, skipping"
+        else
+            echo "  → Generating response..."
+            local slides_context
+            slides_context=$(extract_slides_context "$prompt")
+            local output
+            output=$(call_claude "true" "$prompt" "$slides_context")
+            echo "$output" > "$cache_file"
+            echo "  → Cached to $hash"
+        fi
+    done
+
+    echo "Preparation complete!"
+}
+
+# Function to handle --clear mode
+clear_mode() {
+    echo "Clearing cached copresenter responses..."
+    rm -f "$CACHE_DIR"/*
+    echo "Cache cleared!"
+}
+
+# Main script logic
+main() {
+    local new_session=false
+    local prepare=false
+    local clear=false
+    local prompt=""
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --new)
+                new_session=true
+                shift
+                ;;
+            --prepare)
+                prepare=true
+                shift
+                ;;
+            --clear)
+                clear=true
+                shift
+                ;;
+            *)
+                if [[ -z "$prompt" ]]; then
+                    prompt="$1"
+                else
+                    prompt="$prompt $1"
+                fi
+                shift
+                ;;
+        esac
+    done
+
+    # Handle special modes
+    if [[ "$clear" == "true" ]]; then
+        clear_mode
+        exit 0
+    fi
+
+    if [[ "$prepare" == "true" ]]; then
+        prepare_mode
+        exit 0
+    fi
+
+    # Normal mode: need a prompt
+    if [[ -z "$prompt" ]]; then
+        echo "Error: No prompt provided" >&2
+        echo "Usage: $0 [--new] <prompt>" >&2
+        echo "       $0 --prepare" >&2
+        echo "       $0 --clear" >&2
+        exit 1
+    fi
+
+    # Check if we have a cached response
+    local hash
+    hash=$(hash_prompt "$prompt")
+    local cache_file="$CACHE_DIR/$hash"
+
+    if [[ -f "$cache_file" ]]; then
+        # Return cached response
+        cat "$cache_file"
+        exit 0
+    fi
+
+    # No cached response, generate new one
+    local slides_context
+    slides_context=$(extract_slides_context "$prompt")
+    local output
+    output=$(call_claude "$new_session" "$prompt" "$slides_context")
+
+    # Cache the output
+    echo "$output" > "$cache_file"
+
+    # Return the output
+    echo "$output"
+}
+
+main "$@"
