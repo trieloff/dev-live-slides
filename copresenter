@@ -61,34 +61,26 @@ call_claude() {
     full_prompt+="## Presenter's Request"$'\n\n'
     full_prompt+="$prompt"
 
-    local claude_args=()
+    local claude_args=("-p")  # Always use print mode for non-interactive
 
     if [[ "$new_session" == "true" ]]; then
-        # New session
-        claude_args+=("-c")
+        # New session - don't add continue/resume
+        :
     else
-        # Continue existing session if available
+        # Continue existing session if we're not forcing new
         if [[ -f "$SESSION_FILE" ]]; then
-            local session_id
-            session_id=$(cat "$SESSION_FILE")
-            claude_args+=("-s" "$session_id")
-        else
-            # No session exists, create new one
-            claude_args+=("-c")
+            # Session file exists, continue the conversation
+            claude_args+=("--continue")
         fi
     fi
 
-    # Call claude and capture output and session ID
+    # Call claude and capture output
     local output
-    output=$(claude "${claude_args[@]}" -p "$full_prompt" 2>&1)
+    output=$(claude "${claude_args[@]}" "$full_prompt" 2>&1)
 
-    # Extract session ID from output if it's a new session
-    # Claude Code outputs session info, we need to capture it
+    # Mark that we have a session (for --continue to work next time)
     if [[ "$new_session" == "true" ]] || [[ ! -f "$SESSION_FILE" ]]; then
-        # Try to extract session ID from claude output
-        # This is a placeholder - actual implementation depends on claude CLI output format
-        # For now, we'll create a simple session marker
-        echo "session-$(date +%s)" > "$SESSION_FILE"
+        echo "session-active" > "$SESSION_FILE"
     fi
 
     echo "$output"
