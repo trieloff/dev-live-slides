@@ -73,66 +73,335 @@ Agentic
 
 ---
 
+# Edge Delivery Services
+
+```banner:graceful
+aem.live
+```
+
+---
+
 # AGENTS.md
 
-TODO: Add content about AGENTS.md
+```banner:mini +animate:scanner +loop
+AGENTS.md
+```
+
+---
+
+```ascii
+┌────────────────────────────────────────────────────────┐
+│                     .claude/                           │
+│                   AGENTS.md                            │
+│  ┌──────────────────────────────────────────────────┐ │
+│  │ ## Custom Agents                                 │ │
+│  │                                                  │ │
+│  │ ### Research Agent                               │ │
+│  │ Searches docs, analyzes patterns                │ │
+│  │                                                  │ │
+│  │ ### Refactor Agent                               │ │
+│  │ Restructures code, updates dependencies         │ │
+│  └──────────────────────────────────────────────────┘ │
+└─────────────────┬──────────────────────────────────────┘
+                  │
+                  │ extends capabilities
+                  ▼
+          ┌───────────────┐
+          │  Claude Code  │
+          │    Agent      │
+          └───────────────┘
+```
+
+- Define custom agent behaviors and workflows
+- Extend Claude Code with specialized capabilities
+- Agents can invoke tools, chain tasks, and maintain context
+- Stored in `.claude/AGENTS.md` in your project
 
 ---
 
 # SKILLS.md
 
-TODO: Add content about SKILLS.md
+```banner:mini +animate:neon +loop
+SKILLS.md
+```
+
+---
+
+```ascii
+┌────────────────────────────────────────────────────┐
+│              SKILLS.md Definition                  │
+│                                                    │
+│  ┌──────────────────────────────────────────────┐ │
+│  │ name: pdf                                    │ │
+│  │ description: Extract text from PDF files     │ │
+│  │ prompt: "Use pdftotext to extract..."        │ │
+│  └────────────────────┬─────────────────────────┘ │
+└───────────────────────┼────────────────────────────┘
+                        │
+                        │ Agent invokes skill
+                        ▼
+        ┌───────────────────────────────┐
+        │      Agent Execution          │
+        │                               │
+        │  1. Loads skill definition    │
+        │  2. Injects prompt context    │
+        │  3. Executes with tools       │
+        │  4. Returns results           │
+        └───────────────────────────────┘
+
+  Reusable capabilities • Shared across projects
+  Custom tools • Domain-specific workflows
+```
 
 ---
 
 # --dangerously-skip-permissions
 
-```banner
+```banner:shadow +animate:glitch
 YOLO
 ```
 
-TODO: Add content about YOLO mode
+---
+
+```ascii
+        ⚠️  WARNING  ⚠️
+       /           \
+      /   DANGER   \
+     /    ZONE     \
+    /_____________\
+        |     |
+        |  ☠️  |
+        |     |
+        -------
+```
+
+Skips all permission prompts for file operations
+
+---
+
+**Use when:**
+- You trust the code/agent completely
+- Working in a sandboxed environment
+- Time-sensitive demos (like this one!)
+
+**Don't use when:**
+- Working with production code
+- Unsure about the agent's actions
+- Your code isn't version controlled
 
 ---
 
 # Herzblut
 
-TODO: Add content about Herzblut
+```banner +animate:fire +loop
+HERZBLUT
+```
+
+---
+
+```ascii +animate:breathe
+       ♥♥♥♥♥       ♥♥♥♥♥
+     ♥♥     ♥♥   ♥♥     ♥♥
+    ♥♥       ♥♥ ♥♥       ♥♥
+    ♥♥                   ♥♥
+     ♥♥                 ♥♥
+      ♥♥               ♥♥
+       ♥♥             ♥♥
+         ♥♥         ♥♥
+           ♥♥     ♥♥
+             ♥♥ ♥♥
+               ♥
+```
+
+**Herzblut** (German): *lifeblood, passion, heart and soul*
+
+When you code with an AI agent, you're not just writing code—you're infusing it with your vision, your standards, your *Herzblut*.
+
+The agent amplifies your passion by handling the mechanics while you focus on the craft.
 
 ---
 
 # Multitasking/Multi-Clauding
 
-TODO: Add content about running multiple Claude instances
+```banner:ogre +animate:prism +loop
+PARALLEL
+```
+
+---
+
+```ascii
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│   Terminal 1    │  │   Terminal 2    │  │   Terminal 3    │
+│                 │  │                 │  │                 │
+│  $ claude       │  │  $ claude       │  │  $ claude       │
+│  Building...    │  │  Testing...     │  │  Documenting... │
+│                 │  │                 │  │                 │
+│  [████░░] 60%   │  │  ✓ 47 passed    │  │  Writing API    │
+│                 │  │  ⚠ 2 warnings   │  │  docs...        │
+└─────────────────┘  └─────────────────┘  └─────────────────┘
+         │                    │                    │
+         └────────────────────┼────────────────────┘
+                              │
+                    ┌─────────▼──────────┐
+                    │   Same Codebase    │
+                    │  Different Tasks   │
+                    └────────────────────┘
+```
+
+---
+
+**Why run multiple Claude instances?**
+
+- **Different tasks in parallel**: Build, test, document simultaneously
+- **Different branches**: Work on features while fixes run in main
+- **Context isolation**: Each instance focuses on one specific task
+- **Faster iteration**: Don't wait for one task to finish before starting another
 
 ---
 
 # Git Worktrees
 
-TODO: Add content about Git worktrees
+```banner:small +animate:matrix +loop
+WORKTREE
+```
+
+---
+
+```ascii
+                    main repo (.git)
+                          │
+            ┌─────────────┼─────────────┐
+            │             │             │
+         worktree-1    worktree-2    worktree-3
+         (main)        (feature-a)   (feature-b)
+            │             │             │
+         ┌──▼──┐       ┌──▼──┐       ┌──▼──┐
+         │ 📁  │       │ 📁  │       │ 📁  │
+         │ src │       │ src │       │ src │
+         └─────┘       └─────┘       └─────┘
+           │             │             │
+        claude        claude        claude
+       instance 1    instance 2    instance 3
+```
+
+---
+
+**What are Git Worktrees?**
+
+Multiple working directories attached to the same repository
+- Each worktree can check out a different branch
+- Share the same `.git` database (efficient!)
+- Work on multiple features/branches simultaneously
+
+---
+
+**Why They're Perfect for Agents**
+
+- Run multiple Claude instances on different branches
+- No context switching or stashing required
+- Agents can work in parallel without conflicts
+- Test features independently while keeping main clean
 
 ---
 
 # Seeing like an Agent
 
-TODO: Add content about agent perspective
+```banner:epic +animate:scanner +once
+OBSERVE
+```
+
+---
+
+```ascii
+    .-"-._.-"-._.-"-._.-"-.
+   /                       \
+  |   .-----------------.   |
+  |   |  .-----------. |   |
+  |   | |    * * *   | |   |
+  |   | |   /  |  \  | |   |
+  |   | |  /___|___\ | |   |
+  |   | '-----------' |   |
+  |   '----------------'   |
+   \    Agent Vision      /
+    '-._.-"-._.-"-._.-"-'
+```
+
+## How Agents Perceive Code
+
+- **File System**: Read, search, and navigate your entire codebase
+- **Context**: Understand structure through grep, glob, and AST analysis
+- **Memory**: Build mental models from multiple file reads
+- **Tools**: Extend perception via MCP servers (web, docs, databases)
+
+Agents don't see files like humans - they see patterns, relationships, and possibilities across the entire codebase simultaneously.
 
 ---
 
 # Guardrails/Attribution/Transparency
 
-TODO: Add content about safety and transparency
+```banner +animate:breathe +loop
+SAFETY
+```
+---
+
+```ascii +animate:aurora
+    ╔════════════════════════════╗
+    ║   🛡️  PROTECTED ZONE  🛡️   ║
+    ╠════════════════════════════╣
+    ║   ┌──────────────────┐     ║
+    ║   │  Your Codebase   │     ║
+    ║   │   + Data + Keys  │     ║
+    ║   └──────────────────┘     ║
+    ║         ▲      ▲           ║
+    ║         │      │           ║
+    ║    ┌────┴──┬───┴────┐      ║
+    ║    │ Guard │ Guard  │      ║
+    ║    │ Rails │ Rails  │      ║
+    ║    └───────┴────────┘      ║
+    ╚════════════════════════════╝
+```
+
+---
+
+## Built-in Safety Features
+
+- **Permission prompts** for file modifications and destructive operations
+- **Attribution** - All model responses clearly sourced from Claude
+- **Transparency** - Full audit trail of agent actions in conversation history
+- **Data locality** - Code stays on your machine, only queries sent to cloud
+- **Consent-based** - Agent asks before making changes
 
 ---
 
 # Agent/Model table
 
-TODO: Add comparison table
+```banner:mini +animate:scanner +once
+Showdown
+```
 
 ---
 
-# Edge Delivery Services
-
-```banner:slant
-AEM.live
+```ascii
+╔════════════════════╦═══════════════╦═════════════════════════════╦═════════════╗
+║  Agent Name        ║    Model      ║        Capabilities         ║  Location   ║
+╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
+║ Claude Code        ║ Claude 4.5    ║ Full codebase edit,         ║ CLI + Cloud ║
+║                    ║ Sonnet        ║ shell, MCP servers,         ║             ║
+║                    ║               ║ autonomous execution        ║             ║
+╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
+║ GitHub Copilot     ║ GPT-4 /       ║ Code completion,            ║ IDE + Cloud ║
+║                    ║ Codex         ║ inline suggestions,         ║             ║
+║                    ║               ║ chat in editor              ║             ║
+╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
+║ Cursor             ║ GPT-4 /       ║ Code generation,            ║ IDE + Cloud ║
+║                    ║ Claude        ║ multi-file edits,           ║             ║
+║                    ║               ║ codebase awareness          ║             ║
+╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
+║ Aider              ║ GPT-4 /       ║ CLI-based edits,            ║ CLI + Cloud ║
+║                    ║ Claude        ║ git integration,            ║             ║
+║                    ║               ║ pair programming            ║             ║
+╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
+║ Windsurf           ║ GPT-4         ║ IDE-based coding,           ║ IDE + Cloud ║
+║                    ║               ║ natural language edits      ║             ║
+╚════════════════════╩═══════════════╩═════════════════════════════╩═════════════╝
 ```
