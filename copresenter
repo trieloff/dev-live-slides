@@ -16,6 +16,22 @@ hash_prompt() {
     echo -n "$1" | shasum -a 256 | cut -d' ' -f1
 }
 
+# Function to simulate typing output word by word
+simulate_typing() {
+    local text="$1"
+    local word
+
+    # Read word by word and print with random delays
+    echo "$text" | while read -r line; do
+        for word in $line; do
+            echo -n "$word "
+            # Random delay between 0.01 and 0.04 seconds (much faster)
+            sleep "0.0$(( RANDOM % 4 + 1 ))"
+        done
+        echo  # newline at end of line
+    done
+}
+
 # Function to extract slides content up to the exec block containing the prompt
 extract_slides_context() {
     local prompt="$1"
@@ -226,8 +242,8 @@ main() {
     local cache_file="$CACHE_DIR/$hash"
 
     if [[ -f "$cache_file" ]]; then
-        # Return cached response
-        cat "$cache_file"
+        # Return cached response with simulated typing
+        simulate_typing "$(cat "$cache_file")"
         exit 0
     fi
 
