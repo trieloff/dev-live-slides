@@ -232,6 +232,11 @@ main() {
     fi
 
     # No cached response, generate new one
+    # If --new flag is set, clear the session file to start fresh
+    if [[ "$new_session" == "true" ]]; then
+        rm -f "$SESSION_FILE"
+    fi
+
     local slides_context
     slides_context=$(extract_slides_context "$prompt")
     local output
