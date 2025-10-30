@@ -381,7 +381,7 @@ SAFETY
 
 # Agent/Model table
 
-```banner +animate:scanner +once
+```banner +animate:glitch +once
 COMPARE
 ```
 
