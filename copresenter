@@ -61,29 +61,43 @@ call_claude() {
     full_prompt+="## Presenter's Request"$'\n\n'
     full_prompt+="$prompt"
 
-    local claude_args=("-p")  # Always use print mode for non-interactive
+    local claude_args=("-p" "--output-format" "json")
 
     if [[ "$new_session" == "true" ]]; then
-        # New session - don't add continue/resume
+        # New session - don't add resume
         :
     else
-        # Continue existing session if we're not forcing new
+        # Resume existing session if we're not forcing new
         if [[ -f "$SESSION_FILE" ]]; then
-            # Session file exists, continue the conversation
-            claude_args+=("--continue")
+            local session_id
+            session_id=$(cat "$SESSION_FILE")
+            claude_args+=("--resume" "$session_id")
         fi
     fi
 
-    # Call claude and capture output
-    local output
-    output=$(claude "${claude_args[@]}" "$full_prompt" 2>&1)
+    # Call claude and capture JSON output
+    local json_output
+    json_output=$(claude "${claude_args[@]}" "$full_prompt" 2>&1)
 
-    # Mark that we have a session (for --continue to work next time)
-    if [[ "$new_session" == "true" ]] || [[ ! -f "$SESSION_FILE" ]]; then
-        echo "session-active" > "$SESSION_FILE"
+    # Extract session ID and result from JSON using jq
+    local session_id result
+
+    if command -v jq &> /dev/null; then
+        # Use jq if available
+        session_id=$(echo "$json_output" | jq -r '.session_id // empty')
+        result=$(echo "$json_output" | jq -r '.result // empty')
+    else
+        # Fallback to python if jq is not available
+        session_id=$(echo "$json_output" | python3 -c 'import sys, json; data=json.load(sys.stdin); print(data.get("session_id", ""))' 2>/dev/null || echo "")
+        result=$(echo "$json_output" | python3 -c 'import sys, json; data=json.load(sys.stdin); print(data.get("result", ""))' 2>/dev/null || echo "")
     fi
 
-    echo "$output"
+    # Save the session ID for future use
+    if [[ -n "$session_id" ]]; then
+        echo "$session_id" > "$SESSION_FILE"
+    fi
+
+    echo "$result"
 }
 
 # Function to handle --prepare mode
