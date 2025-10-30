@@ -165,14 +165,14 @@ YOLO
 
 ```ascii
         ⚠️  WARNING  ⚠️
-       /           \
-      /   DANGER   \
-     /    ZONE     \
-    /_____________\
-        |     |
-        |  ☠️  |
-        |     |
-        -------
+       /             \
+      /    DANGER     \
+     /      ZONE       \
+    /_________________\
+         |     |
+         |  ☠️  |
+         |     |
+         -------
 ```
 
 Skips all permission prompts for file operations
