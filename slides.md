@@ -164,15 +164,21 @@ YOLO
 ---
 
 ```ascii
-        ⚠️  WARNING  ⚠️
-       /             \
-      /    DANGER     \
-     /      ZONE       \
-    /_________________\
-         |     |
-         |  ☠️  |
-         |     |
-         -------
+  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  ////////////////////////// DANGER ZONE ////////////////////////
+  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+                                /\
+                               /!!\
+                              /!!!!\
+                             /!!!!!!\
+                            /!!!!!!!!\
+                            \!!!!!!!!/
+                             \!!!!!!/
+                              \!!!!/
+                               \!!/
+                                \/
+  /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  ///////////////////////////////////////////////////////////////
 ```
 
 Skips all permission prompts for file operations
@@ -375,33 +381,16 @@ SAFETY
 
 # Agent/Model table
 
-```banner:mini +animate:scanner +once
-Showdown
+```banner +animate:scanner +once
+COMPARE
 ```
 
 ---
 
-```ascii
-╔════════════════════╦═══════════════╦═════════════════════════════╦═════════════╗
-║  Agent Name        ║    Model      ║        Capabilities         ║  Location   ║
-╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
-║ Claude Code        ║ Claude 4.5    ║ Full codebase edit,         ║ CLI + Cloud ║
-║                    ║ Sonnet        ║ shell, MCP servers,         ║             ║
-║                    ║               ║ autonomous execution        ║             ║
-╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
-║ GitHub Copilot     ║ GPT-4 /       ║ Code completion,            ║ IDE + Cloud ║
-║                    ║ Codex         ║ inline suggestions,         ║             ║
-║                    ║               ║ chat in editor              ║             ║
-╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
-║ Cursor             ║ GPT-4 /       ║ Code generation,            ║ IDE + Cloud ║
-║                    ║ Claude        ║ multi-file edits,           ║             ║
-║                    ║               ║ codebase awareness          ║             ║
-╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
-║ Aider              ║ GPT-4 /       ║ CLI-based edits,            ║ CLI + Cloud ║
-║                    ║ Claude        ║ git integration,            ║             ║
-║                    ║               ║ pair programming            ║             ║
-╠════════════════════╬═══════════════╬═════════════════════════════╬═════════════╣
-║ Windsurf           ║ GPT-4         ║ IDE-based coding,           ║ IDE + Cloud ║
-║                    ║               ║ natural language edits      ║             ║
-╚════════════════════╩═══════════════╩═════════════════════════════╩═════════════╝
-```
+| Agent Name | Model | Capabilities | Location |
+|------------|-------|--------------|----------|
+| **Claude Code** | Claude 4.5 Sonnet | Full codebase edit, shell, MCP servers, autonomous execution | CLI + Cloud |
+| **GitHub Copilot** | GPT-4 / Codex | Code completion, inline suggestions, chat in editor | IDE + Cloud |
+| **Cursor** | GPT-4 / Claude | Code generation, multi-file edits, codebase awareness | IDE + Cloud |
+| **Aider** | GPT-4 / Claude | CLI-based edits, git integration, pair programming | CLI + Cloud |
+| **Windsurf** | GPT-4 | IDE-based coding, natural language edits | IDE + Cloud |
