@@ -387,10 +387,10 @@ COMPARE
 
 ---
 
-| Agent Name | Model | Capabilities | Location |
-|------------|-------|--------------|----------|
-| **Claude Code** | Claude 4.5 Sonnet | Full codebase edit, shell, MCP servers, autonomous execution | CLI + Cloud |
-| **GitHub Copilot** | GPT-4 / Codex | Code completion, inline suggestions, chat in editor | IDE + Cloud |
-| **Cursor** | GPT-4 / Claude | Code generation, multi-file edits, codebase awareness | IDE + Cloud |
-| **Aider** | GPT-4 / Claude | CLI-based edits, git integration, pair programming | CLI + Cloud |
-| **Windsurf** | GPT-4 | IDE-based coding, natural language edits | IDE + Cloud |
+| Agent | Model |
+|-------|-------|
+| `claude` | Claude 4.5 Sonnet |
+| `copilot` | GPT-4 / Codex |
+| `cursor` | GPT-4 / Claude |
+| `aider` | GPT-4 / Claude |
+| `windsurf` | GPT-4 |
