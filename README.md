@@ -203,6 +203,46 @@ ctrl-p, Switch Model, Z.AI, GLM-4.6
 
 Get your API Key from [Z.AI Console](https://z.ai/manage-apikey/apikey-list)
 
+### Goose
+
+```bash
+$ brew install block-goose-cli
+$ nano -w  ~/.config/goose/config.yaml:
+GOOSE_PROVIDER: openai
+GOOSE_MODEL: openai/gpt-oss-120b
+OPENAI_HOST: https://api.groq.com/openai
+
+# Goose Stores the API Key in macOS keyring
+$ security add-generic-password -a secrets -s goose -w '{"OPENAI_API_KEY":"gsk_YOUR_GROQ_API_KEY_HERE"}' -U
+
+# You must not forget to add the "Developer Tools" extension
+$ goose configure
+
+This will update your existing config file
+  if you prefer, you can edit it directly at /Users/trieloff/.config/goose/config.yaml
+
+┌   goose-configure
+│
+◇  What would you like to configure?
+│  Add Extension
+│
+◇  What type of extension would you like to add?
+│  Built-in Extension
+│
+◆  Which built-in extension would you like to enable?
+│  ○ Auto Visualiser
+│  ○ Computer Controller
+│  ● Developer Tools (Code editing and shell access)
+│  ○ JetBrains
+│  ○ Memory
+│  ○ Tutorial
+└
+
+$ goose session
+```
+
+Yeah, it's weird.
+
 # On Presentation Day
 
 Open two terminal windows, in the first one, run the presentation. Fiddle with the font size (`command+plus` or `command+minus`) until the presentation is readable.
