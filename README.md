@@ -156,6 +156,43 @@ $ qwen
 
 We use the default model.
 
+### Aside: groq.com
+
+Log in at [Groq Console](https://console.groq.com/home) and create an API key. You need to fund the account. $20 should be enough.
+
+### Kimi-CLI
+
+```bash
+$ brew install kimi-cli
+$ nano -w ~/.kimi/config.json
+{
+  "default_model": "groq-kimi",
+  "models": {
+    "groq-kimi": {
+      "provider": "groq",
+      "model": "moonshotai/kimi-k2-instruct-0905",
+      "max_context_size": 131072
+    }
+  },
+  "providers": {
+    "groq": {
+      "type": "openai_legacy",
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key": "<YOUR KEY HERE>",
+      "custom_headers": {}
+    }
+  },
+  "loop_control": {
+    "max_steps_per_run": 100,
+    "max_retries_per_step": 3
+  },
+  "services": {}
+}
+$ kimi
+```
+
+
+
 # On Presentation Day
 
 Open two terminal windows, in the first one, run the presentation. Fiddle with the font size (`command+plus` or `command+minus`) until the presentation is readable.
