@@ -276,6 +276,17 @@ Use ↑↓ to navigate, Enter to select, Esc to go back
 
 For `droid`, we use the `Droid Core` model, which like Cursor's Conductor 1 is based on GLM-4.6.
 
+### AMP Code
+
+They have a free model (which I won't use), or you can buy credits to use Sonnet.
+
+```bash
+$ npm install -g @sourcegraph/amp@latest
+$ amp
+```
+
+AMP will make you authenticate, and you need to paste the auth code into the browser, not into the CLI. AMP uses a combination of Claude Sonnet 4.5 and OpenAI GPT-5.
+
 # On Presentation Day
 
 Open two terminal windows, in the first one, run the presentation. Fiddle with the font size (`command+plus` or `command+minus`) until the presentation is readable.
