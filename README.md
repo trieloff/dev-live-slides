@@ -243,6 +243,39 @@ $ goose session
 
 Yeah, it's weird.
 
+### Factory Droid
+
+Droid requires an account and you should fund the account with at least $10.
+
+```bash
+$ curl -fsSL https://app.factory.ai/cli | sh
+$ droid
+Current folder: /Users/trieloff/Developer/dev-live-slides
+
+
+╭────────────────────────────────────────────────────╮
+│ Select Model                                       │
+│                                                    │
+│ Multipliers represent cost in Standard Tokens      │
+│                                                    │
+│   Configure Spec Mode Model                        │
+│     Currently: Same as Main Model                  │
+│                                                    │
+│ Droid Core model inference is US-based             │
+│                                                    │
+│ ── Factory Provided Models ──                      │
+│   GPT-5-Codex (Auto) (0.5x)                        │
+│   Sonnet 4.5 (Reasoning disabled) (1.2x) [current] │
+│   GPT-5 (0.5x)                                     │
+│   Opus 4.1 (6x)                                    │
+│   Haiku 4.5 (0.4x)                                 │
+│ > Droid Core (GLM-4.6) (0.25x)                     │
+╰────────────────────────────────────────────────────╯
+Use ↑↓ to navigate, Enter to select, Esc to go back
+```
+
+For `droid`, we use the `Droid Core` model, which like Cursor's Conductor 1 is based on GLM-4.6.
+
 # On Presentation Day
 
 Open two terminal windows, in the first one, run the presentation. Fiddle with the font size (`command+plus` or `command+minus`) until the presentation is readable.
