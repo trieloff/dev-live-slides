@@ -191,7 +191,17 @@ $ nano -w ~/.kimi/config.json
 $ kimi
 ```
 
+### Crush
 
+For Crush, I am using the [GLM Coding Lite plan](https://z.ai/subscribe) at $9 per quarter.
+
+```bash
+$ brew install charmbracelet/tap/crush
+$ crush
+ctrl-p, Switch Model, Z.AI, GLM-4.6
+```
+
+Get your API Key from [Z.AI Console](https://z.ai/manage-apikey/apikey-list)
 
 # On Presentation Day
 
