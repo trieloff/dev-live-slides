@@ -19,7 +19,7 @@ AI
 # And AI says hi to you
 
 ```bash +exec
-claude -p "Say hi to the Adobe Developers Live audience, but keep it short"
+./copresenter --new "Say hi to the Adobe Developers Live audience"
 ```
 
 ---
@@ -39,7 +39,11 @@ Agentic
 - Standalone agents in the cloud
 
 ---
+```bash +exec
+./copresenter "Got anything to add?"
+```
 
+---
 # Architecture
 
 ```ascii
@@ -69,6 +73,12 @@ Agentic
 │                  │  & Environment  │                     │
 │                  └─────────────────┘                     │
 └──────────────────────────────────────────────────────────┘
+```
+
+---
+
+```bash +exec
+./copresenter "Remind me what MCP stands for"
 ```
 
 ---
@@ -117,6 +127,11 @@ AGENTS.md
 - Agents can invoke tools, chain tasks, and maintain context
 - Stored in `.claude/AGENTS.md` in your project
 
+---
+
+```bash +exec
+./copresenter "Hey, why does every agent but Claude respect AGENTS.md?"
+```
 ---
 
 # SKILLS.md
