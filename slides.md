@@ -284,7 +284,7 @@ PARALLEL
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
 │   Terminal 1    │  │   Terminal 2    │  │   Terminal 3    │
 │                 │  │                 │  │                 │
-│  $ claude       │  │  $ claude       │  │  $ claude       │
+│  $ claude       │  │  $ codex        │  │  $ gemini       │
 │  Building...    │  │  Testing...     │  │  Documenting... │
 │                 │  │                 │  │                 │
 │  [████░░] 60%   │  │  ✓ 47 passed    │  │  Writing API    │
