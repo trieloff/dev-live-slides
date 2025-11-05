@@ -419,7 +419,12 @@ Since version 16.13.0 (2025-09-16), `aem` can forward browser logs to the consol
 
 # Web Development
 
-Tell the agent to use `puppeteer` or `playwright` to automate web interactions, take screenshots and test the code in a real browser.
+---
+
+```bash +exec
+./copresenter "In your impartial option, which one is better for web development: puppeteer or playwright?"
+```
+
 
 ---
 
