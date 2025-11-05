@@ -223,4 +223,61 @@ $ yolo -a
 
 Then press `cmd+option+y` to broadcast a message to all Ghostty splits.
 
+## Prompts for Demo
+
+### Blog Archive
+
+```markdown
+The blog under /blog currently lists only the most recent post and shows excepts for
+the five most recent posts. As the list of blog posts has grown, we now need a proper
+blog archive page that is grouped by year and month and lists posts.
+
+I'd like to see a card for each post in the archive, including
+- Title
+- Date
+- Author
+- Hero Image
+- One or two sentences
+
+Do not attempt to change the index configuration, and instead use the existing index. If you need additional data, let the component fetch the blog post HTML, and parse it using the DOMParser API.
+
+AEM has predictable HTML structure, so building that kind of parser is straightforward.
+
+Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement
+this blog archive, and put it into action. Create descriptive commit messages for each
+step along the way and finish by creating a PR.
+
+Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR
+```
+
+### Light/Dark Mode
+
+```markdown
+Use the light-dark() CSS color function to enable an automatic toggle between light and dark mode based on the user's system settings.
+
+Watch out for following issues:
+- use Adobe's spectrum colors
+- make sure that colors in all blocks are light/dark enabled, we don't want single blocks to stick out
+- some blocks like the hero block have background images, and using white text will not work well there
+- ensure there is sufficient contrast between text and background, especially for image backgrounds
+
+Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement
+this bug fix, and put it into action. Create descriptive commit messages for each
+step along the way and finish by creating a PR.
+
+Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR. Provide plenty of test links, so that different parts of the site, with different blocks can be evaluated.
+```
+
+### Search Return Keypress Bug
+
+```markdown
+I've found a bug in the search functionality. When I enter search terms, multiple results are shown as cards. Pressing enter/return will open a page, but it is not the first result (which could be expected behavior), but the very last result.
+
+Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement
+this bug fix, and put it into action. Create descriptive commit messages for each
+step along the way and finish by creating a PR.
+
+Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR.
+```
+
 ### Break a leg!
