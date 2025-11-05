@@ -503,3 +503,11 @@ COMPARE
 | `kimi` | kimi-k2 |
 | `crush` | GLM-4.6 |
 | `goose` | gpt-oss-120b |
+
+---
+
+```banner:epic +animate:matrix +once
+STOP
+DEMO
+TIME
+```
