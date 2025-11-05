@@ -301,7 +301,7 @@ PARALLEL
 
 ---
 
-**Why run multiple Claude instances?**
+# Why run multiple agents?
 
 - **Different tasks in parallel**: Build, test, document simultaneously
 - **Different branches**: Work on features while fixes run in main
@@ -315,6 +315,9 @@ PARALLEL
 ```banner:small +animate:matrix +loop
 WORKTREE
 ```
+---
+
+![](Firefly_Gemini Flash_Create a pixel-art illustration (8-bit) of a forest of little trees 248041.png)
 
 ---
 
@@ -337,18 +340,16 @@ WORKTREE
 
 ---
 
-**What are Git Worktrees?**
+# What are Git Worktrees?
 
 Multiple working directories attached to the same repository
 - Each worktree can check out a different branch
 - Share the same `.git` database (efficient!)
 - Work on multiple features/branches simultaneously
 
----
+# Why They're Perfect for Agents
 
-**Why They're Perfect for Agents**
-
-- Run multiple Claude instances on different branches
+- Run multiple agents on different branches
 - No context switching or stashing required
 - Agents can work in parallel without conflicts
 - Test features independently while keeping main clean
