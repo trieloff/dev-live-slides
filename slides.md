@@ -44,7 +44,6 @@ Agentic
 ```
 
 ---
-# Architecture
 
 ```ascii
 ┌──────────────────────────────────────────────────────────┐
@@ -91,7 +90,10 @@ aem.live
 
 ---
 
-https://www.aem.live/ai
+# https://www.aem.live/ai
+
+![Screenshot: developing with AI tools on www.aem.live](ai.png)
+
 
 ---
 
@@ -103,7 +105,7 @@ AGENTS.md
 
 ---
 
-```ascii
+```ascii +animate:matrix
 ┌────────────────────┐          ┌────────────────────┐
 │                    │          │                    │
 │    ~/AGENTS.md     │          │    ./AGENTS.md     │
@@ -149,7 +151,7 @@ SKILLS.md
 
 ---
 
-```ascii
+```ascii +animate:matrix
          ┌────────────────────────────────────┐
      ┌───│  .claude/skills/search/SKILLS.md   │
      │   └────────────────────────────────────┘
@@ -201,13 +203,13 @@ Install skills from another repository, for any agent that respects `AGENTS.md`
 
 # `--dangerously-skip-permissions`
 
-```banner:shadow +animate:glitch
+```banner:block +animate:glitch +loop
 YOLO
 ```
 
 ---
 
-```ascii
+```ascii +animate:fire +loop
   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
   ////////////////////////// DANGER ZONE ////////////////////////
   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -225,7 +227,7 @@ YOLO
   ///////////////////////////////////////////////////////////////
 ```
 
-Skips all permission prompts for file operations (and this is where the fun begins)
+Skips all permission prompts for file operations (and this is where the _fun_ begins)
 
 ---
 ## Normal operations
@@ -242,15 +244,14 @@ Assured, and bored.
 
 ---
 
-# Herzblut
-
 ```banner +animate:fire +loop
 HERZBLUT
 ```
 
 ---
+# Entschuldigung, was ist Herzblut?
 
-```ascii +animate:breathe
+```ascii +animate:breathe +loop
        ♥♥♥♥♥       ♥♥♥♥♥
      ♥♥     ♥♥   ♥♥     ♥♥
     ♥♥       ♥♥ ♥♥       ♥♥
@@ -274,13 +275,13 @@ When coding with an AI agent, __drop that attitude__, it won't do you no good. T
 
 # Multitasking/Multi-Clauding
 
-```banner:ogre +animate:prism +loop
+```banner:ogre +animate:fire
 PARALLEL
 ```
 
 ---
 
-```ascii
+```ascii +animate:matrix
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
 │   Terminal 1    │  │   Terminal 2    │  │   Terminal 3    │
 │                 │  │                 │  │                 │
@@ -317,16 +318,16 @@ WORKTREE
 ```
 ---
 
-![](Firefly_Gemini Flash_Create a pixel-art illustration (8-bit) of a forest of little trees 248041.png)
+![Firefly_Gemini Flash_Create a pixel-art illustration (8-bit) of a forest of little trees](worktrees.png)
 
 ---
 
-```ascii
+```ascii +animate:matrix
                     main repo (.git)
                           │
             ┌─────────────┼─────────────┐
             │             │             │
-         worktree-1    worktree-2    worktree-3
+         claude-1      codex-2        gemini-3
          (main)        (feature-a)   (feature-b)
             │             │             │
          ┌──▼──┐       ┌──▼──┐       ┌──▼──┐
@@ -334,7 +335,7 @@ WORKTREE
          │ src │       │ src │       │ src │
          └─────┘       └─────┘       └─────┘
            │             │             │
-        claude        claude        claude
+        claude         codex        gemini
        instance 1    instance 2    instance 3
 ```
 
@@ -374,24 +375,29 @@ $ aem up
 
 # Seeing like an Agent
 
-```banner:epic +animate:scanner +once
+```banner:epic +animate:fire +once
 OBSERVE
 ```
 
 ---
 
-```ascii
+```ascii +animate:prism +loop
     .-"-._.-"-._.-"-._.-"-.
    /                       \
-  |   .-----------------.   |
+  |   .-----------------.  |
   |   |  .-----------. |   |
   |   | |    * * *   | |   |
   |   | |   /  |  \  | |   |
   |   | |  /___|___\ | |   |
-  |   | '-----------' |   |
+  |   | '-----------'  |   |
   |   '----------------'   |
    \    Agent Vision      /
     '-._.-"-._.-"-._.-"-'
+```
+---
+
+```bash +exec
+./copresenter "What's that last slide supposed to mean?"
 ```
 
 ---
@@ -418,6 +424,8 @@ $ aem up --forward-browser-logs
 Since version 16.13.0 (2025-09-16), `aem` can forward browser logs to the console, so agents can see them.
 
 # Web Development
+
+Use `puppeteer` or `playwright`, and instruct your agent to write throw-away scripts to test and capture the page.
 
 ---
 
