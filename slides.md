@@ -150,34 +150,56 @@ SKILLS.md
 ---
 
 ```ascii
-┌────────────────────────────────────────────────────┐
-│              SKILLS.md Definition                  │
-│                                                    │
-│  ┌──────────────────────────────────────────────┐ │
-│  │ name: pdf                                    │ │
-│  │ description: Extract text from PDF files     │ │
-│  │ prompt: "Use pdftotext to extract..."        │ │
-│  └────────────────────┬─────────────────────────┘ │
-└───────────────────────┼────────────────────────────┘
-                        │
-                        │ Agent invokes skill
-                        ▼
-        ┌───────────────────────────────┐
-        │      Agent Execution          │
-        │                               │
-        │  1. Loads skill definition    │
-        │  2. Injects prompt context    │
-        │  3. Executes with tools       │
-        │  4. Returns results           │
-        └───────────────────────────────┘
-
-  Reusable capabilities • Shared across projects
-  Custom tools • Domain-specific workflows
+         ┌────────────────────────────────────┐
+     ┌───│  .claude/skills/search/SKILLS.md   │
+     │   └────────────────────────────────────┘
+     │       ┌────────────────────────────────────┐
+     ├───────│   .claude/skills/test/SKILLS.md    │
+     │       └────────────────────────────────────┘
+     │           ┌────────────────────────────────────┐
+     ├───────────│    .claude/skills/pr/SKILLS.md     │
+     │           └────────────────────────────────────┘
+     │
+     ▼
+┌─────────┐
+│ Coding  │ list skills at start of
+│  Agent  │ session, load on demand
+└─────────┘
 ```
 
 ---
 
-# --dangerously-skip-permissions
+# What skills can do
+
+- make your agent more __skilled__
+- are used on-demand
+- don't consume *context* by default
+
+<!--
+
+Note: context is the hard currency of coding agents. you want to preserve them,
+protect them, and use them wisely.
+
+-->
+---
+
+```bash +exec
+./copresenter "Kudos to team Anthropic for inventing SKILLS.md. Do other agents respect SKILLS.md?"
+```
+---
+
+# Upskill
+
+```bash
+$ gh ext install trieloff/gh-upskill
+$ gh upskill adobe/helix-website
+```
+
+Install skills from another repository, for any agent that respects `AGENTS.md`
+
+---
+
+# `--dangerously-skip-permissions`
 
 ```banner:shadow +animate:glitch
 YOLO
