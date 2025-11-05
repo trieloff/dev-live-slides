@@ -366,6 +366,12 @@ $ aem up
 
 ---
 
+```bash +exec
+./copresenter "What's your favorite aspect about multi-clauding, my little agentic friend?"
+```
+
+---
+
 # Seeing like an Agent
 
 ```banner:epic +animate:scanner +once
@@ -388,14 +394,32 @@ OBSERVE
     '-._.-"-._.-"-._.-"-'
 ```
 
-## How Agents Perceive Code
+---
 
-- **File System**: Read, search, and navigate your entire codebase
-- **Context**: Understand structure through grep, glob, and AST analysis
-- **Memory**: Build mental models from multiple file reads
-- **Tools**: Extend perception via MCP servers (web, docs, databases)
+## Coding Agents are (mostly) text-based
 
-Agents don't see files like humans - they see patterns, relationships, and possibilities across the entire codebase simultaneously.
+- **Source code**: naturally
+- **CLI**: very well
+- **CLI background tasks**: emerging support (Claude is great at that)
+- **TUI**: early support (`gemini`), but still buggy
+- **Image inputs**: mixed: some have it, some don't, but it's always consuming lots of context
+- **GUI Apps**: no. not yet, at least
+
+To help your agent, see what you see, turn the vision challenge into a coding challenge.
+
+---
+
+# In AEM
+
+```bash
+$ aem up --forward-browser-logs
+```
+
+Since version 16.13.0 (2025-09-16), `aem` can forward browser logs to the console, so agents can see them.
+
+# Web Development
+
+Tell the agent to use `puppeteer` or `playwright` to automate web interactions, take screenshots and test the code in a real browser.
 
 ---
 
