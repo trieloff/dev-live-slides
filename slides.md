@@ -356,6 +356,16 @@ Multiple working directories attached to the same repository
 
 ---
 
+```bash
+$ aem up
+```
+
+# Automatic Worktree Detection
+
+`aem up` automatically detects when it's launched in a Git worktree and will pick a non-conflicting port: run as many dev servers as you have worktrees. Since version 16.12.0 (2025-09-16)
+
+---
+
 # Seeing like an Agent
 
 ```banner:epic +animate:scanner +once
