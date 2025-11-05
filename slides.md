@@ -225,19 +225,20 @@ YOLO
   ///////////////////////////////////////////////////////////////
 ```
 
-Skips all permission prompts for file operations
+Skips all permission prompts for file operations (and this is where the fun begins)
 
 ---
+## Normal operations
 
-**Use when:**
-- You trust the code/agent completely
-- Working in a sandboxed environment
-- Time-sensitive demos (like this one!)
+The agent will ask for permission for any potentially sensitive, or destructive operation.
 
-**Don't use when:**
-- Working with production code
-- Unsure about the agent's actions
-- Your code isn't version controlled
+## How you will feel
+
+Assured, and bored.
+
+## Escape the sandbox
+
+> Or have you ever seen a cowboy wear a seatbelt to the rodeo?
 
 ---
 
