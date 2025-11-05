@@ -266,9 +266,9 @@ HERZBLUT
 
 **Herzblut** (German): *lifeblood, passion, heart and soul*
 
-When you code with an AI agent, you're not just writing code—you're infusing it with your vision, your standards, your *Herzblut*.
+When you code without an AI agent, you're not just writing code—you're infusing it with your vision, your standards, your *Herzblut*. You feel passionate about every detail of the code.
 
-The agent amplifies your passion by handling the mechanics while you focus on the craft.
+When coding with an AI agent, __drop that attitude__, it won't do you no good. The agent is a tool, an so is the code it produces.
 
 ---
 
