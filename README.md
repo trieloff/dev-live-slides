@@ -13,6 +13,7 @@ This repo contains the slides and code used in the Dev Live session.
 - [ai-aligned-gh](https://github.com/trieloff/ai-aligned-gh) `curl -fsSL https://raw.githubusercontent.com/trieloff/ai-aligned-gh/main/install.sh | sh`
 - [yolo](https://github.com/trieloff/yolo) `curl -fsSL https://raw.githubusercontent.com/trieloff/yolo/main/install.sh | sh`
 - [Apple Shortcuts Yolo Shortcut](https://www.icloud.com/shortcuts/32970a55ba5c41538d8168dc48a83dd7) (bind this to `cmd+option+y`, it will broadcast a message to all Ghostty splits)
+- [bat](https://github.com/sharkdp/bat) `brew install bat`
 
 ## Agent Setup
 
