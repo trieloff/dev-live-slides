@@ -1,19 +1,11 @@
 ---
 title: Coding Agent Showdown
 sub_title: The Good, the Bad, and the Ugly
-author: Lars Trieloff (@trieloff)
+author: Neeraj Garg (@garg)
 theme:
   name: dark
 options:
   end_slide_shorthand: true
----
-
-# Say hi to AI
-
-```banner
-AI
-```
-
 ---
 
 # And AI says hi to you
@@ -82,21 +74,6 @@ Agentic
 
 ---
 
-# Edge Delivery Services
-
-```banner:graceful
-aem.live
-```
-
----
-
-# https://www.aem.live/ai
-
-![Screenshot: developing with AI tools on www.aem.live](ai.png)
-
-
----
-
 # AGENTS.md
 
 ```banner:mini +animate:scanner +loop
@@ -136,11 +113,6 @@ https://github.com/adobe/helix-website/blob/main/AGENTS.md
 
 (steal this)
 
----
-
-```bash +exec
-./copresenter "Hey, why does every agent but Claude respect AGENTS.md?"
-```
 ---
 
 # SKILLS.md
@@ -183,11 +155,6 @@ Note: context is the hard currency of coding agents. you want to preserve them,
 protect them, and use them wisely.
 
 -->
----
-
-```bash +exec
-./copresenter "Kudos to team Anthropic for inventing SKILLS.md. Do other agents respect SKILLS.md?"
-```
 ---
 
 # Upskill
@@ -365,35 +332,21 @@ $ aem up
 
 `aem up` automatically detects when it's launched in a Git worktree and will pick a non-conflicting port: run as many dev servers as you have worktrees. Since version 16.12.0 (2025-09-16)
 
+
 ---
 
-```bash +exec
-./copresenter "What's your favorite aspect about multi-clauding, my little agentic friend?"
+# Edge Delivery Services
+
+```banner:graceful
+aem.live
 ```
 
 ---
 
-# Seeing like an Agent
+# https://www.aem.live/ai
 
-```banner:epic +animate:fire +once
-OBSERVE
-```
+![Screenshot: developing with AI tools on www.aem.live](ai.png)
 
----
-
-```ascii +animate:prism +loop
-    .-"-._.-"-._.-"-._.-"-.
-   /                       \
-  |   .-----------------.  |
-  |   |  .-----------. |   |
-  |   | |    * * *   | |   |
-  |   | |   /  |  \  | |   |
-  |   | |  /___|___\ | |   |
-  |   | '-----------'  |   |
-  |   '----------------'   |
-   \    Agent Vision      /
-    '-._.-"-._.-"-._.-"-'
-```
 ---
 
 ```bash +exec
@@ -426,12 +379,6 @@ Since version 16.13.0 (2025-09-16), `aem` can forward browser logs to the consol
 # Web Development
 
 Use `puppeteer` or `playwright`, and instruct your agent to write throw-away scripts to test and capture the page.
-
----
-
-```bash +exec
-./copresenter "In your impartial option, which one is better for web development: puppeteer or playwright?"
-```
 
 
 ---
@@ -492,7 +439,6 @@ COMPARE
 | Agent | Model |
 |-------|-------|
 | `claude` | claude-opus-4.1 |
-| `codex` | gpt-5-high |
 | `gemini` | gemini-2.5-pro |
 | `copilot` | claude-haiku-4.5 |
 | `cursor-agent` | composer 1 |
