@@ -16,7 +16,7 @@ On the page `/developer/block-party/`, the entries currently render in a simple 
 
 Implement the UI within the existing Card List block so only this page changes behavior based on its context/config. Keep keyboard accessibility and screen-reader labels.
 
-Analyze the project and the live website, implement the feature with descriptive commits, and open a PR identifying the tool/model and adding the `ai-generated` label. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch.
+Analyze the project and the live website, implement the feature with descriptive commits, and open a PR identifying the tool/model and adding the `ai-generated` label. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch. Include the correct preview link in the PR description.
 ```
 
 ### Block Party: In-card Actions and Quick View
@@ -30,7 +30,7 @@ Enhance Block Party cards with helpful actions:
 
 Implement within the Card List block; avoid layout shifts. Test on the Block Party page.
 
-Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch.
+Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch. Include the correct preview link in the PR description.
 ```
 
 ### Docs: Copy-to-Clipboard on Code Blocks
@@ -44,7 +44,7 @@ Add a small copy button to all fenced code blocks across docs pages:
 
 Implement as a small enhancement in the code rendering logic without altering content authorship.
 
-Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch.
+Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch. Include the correct preview link in the PR description.
 ```
 
 ### Reading Progress Bar and Back-to-Top
@@ -57,7 +57,7 @@ For long-form pages, add:
 
 Keep styles subtle and aligned with existing design tokens.
 
-Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch.
+Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch. Include the correct preview link in the PR description.
 ```
 ### 404 Page Improvements with Suggestions
 
@@ -70,7 +70,7 @@ Enhance `404.html` to provide helpful suggestions:
 
 Ensure the page works without JS and looks good in light/dark contexts. Include screenshots and test links in the PR.
 
-Analyze the project and the live website, implement changes, commit descriptively, and open a PR identifying the tool/model and adding the `ai-generated` label. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch.
+Analyze the project and the live website, implement changes, commit descriptively, and open a PR identifying the tool/model and adding the `ai-generated` label. Prefer creating a branch in the same repository (instead of forking) and raise the PR from that branch. Include the correct preview link in the PR description.
 ```
 
 
