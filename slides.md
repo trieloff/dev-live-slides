@@ -442,13 +442,8 @@ COMPARE
 | `gemini` | gemini-2.5-pro |
 | `copilot` | claude-haiku-4.5 |
 | `cursor-agent` | composer 1 |
-| `opencode` | Grok Code Fast 1 |
 | `qwen` | qwen3-coder-plus-2025-09-23 |
 | `droid` | Droid Core (GLM 4.6) |
-| `amp` | sonnet-4.5/gpt-5 |
-| `kimi` | kimi-k2 |
-| `crush` | GLM-4.6 |
-| `goose` | gpt-oss-120b |
 
 ---
 
