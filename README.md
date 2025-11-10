@@ -312,7 +312,22 @@ Then press `cmd+option+y` to broadcast a message to all Ghostty splits.
 
 ### Blog Archive (Lars)
 
-> The blog under /blog currently lists only the most recent post and shows excepts for the five most recent posts. As the list of blog posts has grown, we now need a proper blog archive page that is grouped by year and month and lists posts. I'd like to see a card for each post in the archive, including: Title, Date, Author, Hero Image, and one or two sentences. Do not attempt to change the index configuration, and instead use the existing index. If you need additional data, let the component fetch the blog post HTML, and parse it using the DOMParser API. AEM has predictable HTML structure, so building that kind of parser is straightforward. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this blog archive, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR
+> The blog under /blog currently lists only the most recent post and shows excepts for the five most recent posts. As the list of blog posts has grown, we now need a proper blog archive page that is grouped by year and month and lists posts.
+>
+> I'd like to see a card for each post in the archive, including:
+> - Title
+> - Date
+> - Author
+> - Hero Image
+> - One or two sentences
+>
+> Do not attempt to change the index configuration, and instead use the existing index. If you need additional data, let the component fetch the blog post HTML, and parse it using the DOMParser API.
+>
+> AEM has predictable HTML structure, so building that kind of parser is straightforward.
+>
+> Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this blog archive, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR.
+>
+> Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR
 
 ```markdown
 The blog under /blog currently lists only the most recent post and shows excepts for the five most recent posts. As the list of blog posts has grown, we now need a proper blog archive page that is grouped by year and month and lists posts. I'd like to see a card for each post in the archive, including: Title, Date, Author, Hero Image, and one or two sentences. Do not attempt to change the index configuration, and instead use the existing index. If you need additional data, let the component fetch the blog post HTML, and parse it using the DOMParser API. AEM has predictable HTML structure, so building that kind of parser is straightforward. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this blog archive, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR
@@ -320,7 +335,17 @@ The blog under /blog currently lists only the most recent post and shows excepts
 
 ### Light/Dark Mode (Lars)
 
-> Use the light-dark() CSS color function to enable an automatic toggle between light and dark mode based on the user's system settings. Watch out for following issues: use Adobe's spectrum colors, make sure that colors in all blocks are light/dark enabled, we don't want single blocks to stick out, some blocks like the hero block have background images, and using white text will not work well there, ensure there is sufficient contrast between text and background, especially for image backgrounds. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR. Provide plenty of test links, so that different parts of the site, with different blocks can be evaluated.
+> Use the light-dark() CSS color function to enable an automatic toggle between light and dark mode based on the user's system settings.
+>
+> Watch out for following issues:
+> - use Adobe's spectrum colors
+> - make sure that colors in all blocks are light/dark enabled, we don't want single blocks to stick out
+> - some blocks like the hero block have background images, and using white text will not work well there
+> - ensure there is sufficient contrast between text and background, especially for image backgrounds
+>
+> Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR.
+>
+> Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR. Provide plenty of test links, so that different parts of the site, with different blocks can be evaluated.
 
 ```markdown
 Use the light-dark() CSS color function to enable an automatic toggle between light and dark mode based on the user's system settings. Watch out for following issues: use Adobe's spectrum colors, make sure that colors in all blocks are light/dark enabled, we don't want single blocks to stick out, some blocks like the hero block have background images, and using white text will not work well there, ensure there is sufficient contrast between text and background, especially for image backgrounds. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR. Provide plenty of test links, so that different parts of the site, with different blocks can be evaluated.
@@ -328,7 +353,11 @@ Use the light-dark() CSS color function to enable an automatic toggle between li
 
 ### Search Return Keypress Bug (Lars)
 
-> I've found a bug in the search functionality. When I enter search terms, multiple results are shown as cards. Pressing enter/return will open a page, but it is not the first result (which could be expected behavior), but the very last result. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR.
+> I've found a bug in the search functionality. When I enter search terms, multiple results are shown as cards. Pressing enter/return will open a page, but it is not the first result (which could be expected behavior), but the very last result.
+>
+> Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR.
+>
+> Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR.
 
 ```markdown
 I've found a bug in the search functionality. When I enter search terms, multiple results are shown as cards. Pressing enter/return will open a page, but it is not the first result (which could be expected behavior), but the very last result. Analyze the project and the content of the live website to understand the code and content structure, then develop a plan to implement this bug fix, and put it into action. Create descriptive commit messages for each step along the way and finish by creating a PR. Once you are done, open a new PR using gh CLI, and clearly identify yourself (tool and model) and add the ai-generated label to the PR.
@@ -336,7 +365,15 @@ I've found a bug in the search functionality. When I enter search terms, multipl
 
 ### Docs: Copy-to-Clipboard on Code Blocks (Neeraj)
 
-> Add a small copy button to all fenced code blocks across docs pages: Copies the code block contents to the clipboard, Shows a brief "Copied" tooltip or checkmark state, Keyboard accessible and screen-reader friendly. Implement as a small enhancement in the code rendering logic without altering content authorship. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
+> Add a small copy button to all fenced code blocks across docs pages:
+>
+> - Copies the code block contents to the clipboard
+> - Shows a brief "Copied" tooltip or checkmark state
+> - Keyboard accessible and screen-reader friendly
+>
+> Implement as a small enhancement in the code rendering logic without altering content authorship.
+>
+> Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
 
 ```markdown
 Add a small copy button to all fenced code blocks across docs pages: Copies the code block contents to the clipboard, Shows a brief "Copied" tooltip or checkmark state, Keyboard accessible and screen-reader friendly. Implement as a small enhancement in the code rendering logic without altering content authorship. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
@@ -344,14 +381,29 @@ Add a small copy button to all fenced code blocks across docs pages: Copies the 
 
 ### Reading Progress Bar and Back-to-Top (Neeraj)
 
-> For long-form pages, add: A thin reading progress bar at the top that fills as the user scrolls, A floating "Back to top" button that appears after the first screen, keyboard accessible. Keep styles subtle and aligned with existing design tokens. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
+> For long-form pages, add:
+>
+> - A thin reading progress bar at the top that fills as the user scrolls
+> - A floating "Back to top" button that appears after the first screen, keyboard accessible
+>
+> Keep styles subtle and aligned with existing design tokens.
+>
+> Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
 
 ```markdown
 For long-form pages, add: A thin reading progress bar at the top that fills as the user scrolls, A floating "Back to top" button that appears after the first screen, keyboard accessible. Keep styles subtle and aligned with existing design tokens. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
 ```
 ### 404 Page Improvements with Suggestions (Neeraj)
 
-> Enhance `404.html` to provide helpful suggestions: Add a search box with autofocus and keyboard-friendly behavior, Show a short list of popular or recent pages (use existing index), Offer a link back to the homepage and key sections. Ensure the page works without JS and looks good in light/dark contexts. Include screenshots and test links in the PR. Analyze the project and the live website, implement changes, commit descriptively, and open a PR identifying the tool/model and adding the `ai-generated` label.
+> Enhance `404.html` to provide helpful suggestions:
+>
+> - Add a search box with autofocus and keyboard-friendly behavior
+> - Show a short list of popular or recent pages (use existing index)
+> - Offer a link back to the homepage and key sections
+>
+> Ensure the page works without JS and looks good in light/dark contexts. Include screenshots and test links in the PR.
+>
+> Analyze the project and the live website, implement changes, commit descriptively, and open a PR identifying the tool/model and adding the `ai-generated` label.
 
 ```markdown
 Enhance `404.html` to provide helpful suggestions: Add a search box with autofocus and keyboard-friendly behavior, Show a short list of popular or recent pages (use existing index), Offer a link back to the homepage and key sections. Ensure the page works without JS and looks good in light/dark contexts. Include screenshots and test links in the PR. Analyze the project and the live website, implement changes, commit descriptively, and open a PR identifying the tool/model and adding the `ai-generated` label.
@@ -359,7 +411,20 @@ Enhance `404.html` to provide helpful suggestions: Add a search box with autofoc
 
 ### Block Party: Card List → Responsive Grid with Filters and Sorting ( ? )
 
-> On the page `/developer/block-party/`, the entries currently render in a simple list via the Card List block. Redesign this view to a responsive grid with client-side filtering and sorting: Use a 2–3 column grid on desktop, 1 column on mobile, Each card shows title, category badge (e.g., Sidekick plugin/Other), contributor handle chip, and a "Preview" pill where applicable, Add a toolbar above the grid with: Category filter (All, Sidekick plugin, Other), Sort dropdown (A–Z, Z–A, Newest first), Result count that updates as filters change, Preserve deep links by syncing state to the URL query string, Progressive enhancement: default to the existing list if JS is disabled. Implement the UI within the existing Card List block so only this page changes behavior based on its context/config. Keep keyboard accessibility and screen-reader labels. Analyze the project and the live website, implement the feature with descriptive commits, and open a PR identifying the tool/model and adding the `ai-generated` label.
+> On the page `/developer/block-party/`, the entries currently render in a simple list via the Card List block. Redesign this view to a responsive grid with client-side filtering and sorting:
+>
+> - Use a 2–3 column grid on desktop, 1 column on mobile
+> - Each card shows title, category badge (e.g., Sidekick plugin/Other), contributor handle chip, and a "Preview" pill where applicable
+> - Add a toolbar above the grid with:
+>   - Category filter (All, Sidekick plugin, Other)
+>   - Sort dropdown (A–Z, Z–A, Newest first)
+>   - Result count that updates as filters change
+> - Preserve deep links by syncing state to the URL query string
+> - Progressive enhancement: default to the existing list if JS is disabled
+>
+> Implement the UI within the existing Card List block so only this page changes behavior based on its context/config. Keep keyboard accessibility and screen-reader labels.
+>
+> Analyze the project and the live website, implement the feature with descriptive commits, and open a PR identifying the tool/model and adding the `ai-generated` label.
 
 ```markdown
 On the page `/developer/block-party/`, the entries currently render in a simple list via the Card List block. Redesign this view to a responsive grid with client-side filtering and sorting: Use a 2–3 column grid on desktop, 1 column on mobile, Each card shows title, category badge (e.g., Sidekick plugin/Other), contributor handle chip, and a "Preview" pill where applicable, Add a toolbar above the grid with: Category filter (All, Sidekick plugin, Other), Sort dropdown (A–Z, Z–A, Newest first), Result count that updates as filters change, Preserve deep links by syncing state to the URL query string, Progressive enhancement: default to the existing list if JS is disabled. Implement the UI within the existing Card List block so only this page changes behavior based on its context/config. Keep keyboard accessibility and screen-reader labels. Analyze the project and the live website, implement the feature with descriptive commits, and open a PR identifying the tool/model and adding the `ai-generated` label.
@@ -367,7 +432,15 @@ On the page `/developer/block-party/`, the entries currently render in a simple 
 
 ### Block Party: In-card Actions and Quick View ( ? )
 
-> Enhance Block Party cards with helpful actions: Add a "Quick view" that opens a small side panel or modal with the description and key metadata (category, contributor), Add a secondary action on each card (e.g., "Copy link" button) to copy a deep link to that entry, Ensure focus trapping and ESC to close for accessibility. Implement within the Card List block; avoid layout shifts. Test on the Block Party page. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
+> Enhance Block Party cards with helpful actions:
+>
+> - Add a "Quick view" that opens a small side panel or modal with the description and key metadata (category, contributor)
+> - Add a secondary action on each card (e.g., "Copy link" button) to copy a deep link to that entry
+> - Ensure focus trapping and ESC to close for accessibility
+>
+> Implement within the Card List block; avoid layout shifts. Test on the Block Party page.
+>
+> Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
 
 ```markdown
 Enhance Block Party cards with helpful actions: Add a "Quick view" that opens a small side panel or modal with the description and key metadata (category, contributor), Add a secondary action on each card (e.g., "Copy link" button) to copy a deep link to that entry, Ensure focus trapping and ESC to close for accessibility. Implement within the Card List block; avoid layout shifts. Test on the Block Party page. Analyze, implement, commit clearly, and open a PR with the `ai-generated` label and tool/model identification.
