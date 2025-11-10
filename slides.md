@@ -105,7 +105,7 @@ AGENTS.md
 
 ---
 
-```ascii +animate:matrix
+```ascii +animate:typewriter +once
 ┌────────────────────┐          ┌────────────────────┐
 │                    │          │                    │
 │    ~/AGENTS.md     │          │    ./AGENTS.md     │
