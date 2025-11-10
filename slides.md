@@ -511,3 +511,9 @@ STOP
 DEMO
 TIME
 ```
+
+---
+
+```bash +exec
+./copresenter "How long do you think, did it take to set up these agents?"
+```
