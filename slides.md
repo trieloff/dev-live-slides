@@ -82,7 +82,7 @@ AGENTS.md
 
 ---
 
-```ascii +animate:matrix
+```ascii +animate:typewriter +once
 ┌────────────────────┐          ┌────────────────────┐
 │                    │          │                    │
 │    ~/AGENTS.md     │          │    ./AGENTS.md     │
@@ -451,4 +451,10 @@ COMPARE
 STOP
 DEMO
 TIME
+```
+
+---
+
+```bash +exec
+./copresenter "How long do you think, did it take to set up these agents?"
 ```
