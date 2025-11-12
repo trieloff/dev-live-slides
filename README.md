@@ -1,6 +1,9 @@
 # Dev Live Slides
 
-This repo contains the slides and code used in the Dev Live session.
+This repo contains the slides and code used in the Dev Live session and enables the craziness pictured below: 12 agents working on the same task in parallel.
+
+<img width="1710" height="1073" alt="Screenshot 2025-11-11 at 12 37 41" src="https://github.com/user-attachments/assets/c1dbf7f4-c3bb-4f63-a28f-a970b7b00e01" />
+
 
 # Prerequisites
 
